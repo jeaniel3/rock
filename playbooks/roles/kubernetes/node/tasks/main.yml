@@ -3,8 +3,6 @@
 #######################################################
 ---
 
-
-
 - import_tasks: 00_preflight.yml
 
 - name: Install New Node
@@ -17,4 +15,9 @@
   import_role:
     name: kubernetes/common
     tasks_from: label_nodes.yml
+
+- name: Setup DNS
+  import_role:
+    name: kubernetes/common
+    tasks_from: setup_kubedns
 ...
